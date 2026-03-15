@@ -349,7 +349,7 @@ section{position:relative;padding:100px 6%;z-index:1}
 
 .service-card{
   position:relative;border-radius:var(--radius);
-  padding:2.2rem 2rem;border:1px solid var(--border);
+  padding:1.4rem 1.4rem;border:1px solid var(--border);
   overflow:hidden;cursor:default;background:var(--bg2);
   transition:border-color .35s,box-shadow .35s
 }
@@ -1330,11 +1330,14 @@ footer::before{
 /* ═══════════════════════════════════
    RESPONSIVE — TABLET ≤900px
 ═══════════════════════════════════ */
+@media(max-width:1080px){
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .process-grid{grid-template-columns:repeat(2,1fr)}
+}
+
 @media(max-width:900px){
   .nav-links{display:none}
   .hamburger{display:flex}
-  .services-grid{grid-template-columns:repeat(2,1fr)}
-  .process-grid{grid-template-columns:repeat(2,1fr)}
   .about-grid{grid-template-columns:1fr;gap:2.5rem}
   .wl-banner{grid-template-columns:1fr;gap:2rem;text-align:center}
   .wl-banner .btn-primary{align-self:center}
