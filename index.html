@@ -158,7 +158,7 @@ section{position:relative;padding:100px 6%;z-index:1}
 }
 .section-title{
   font-family:var(--font-head);
-  font-size:clamp(1.9rem,3.8vw,3rem);
+  font-size:clamp(1.6rem,3vw,2.4rem);
   font-weight:800;line-height:1.12;
   letter-spacing:-.025em;margin-bottom:.8rem
 }
@@ -224,7 +224,7 @@ section{position:relative;padding:100px 6%;z-index:1}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.4)}}
 .hero h1{
   font-family:var(--font-head);
-  font-size:clamp(2rem,4vw,3.6rem);
+  font-size:clamp(1.6rem,3.2vw,2.8rem);
   font-weight:800;line-height:1.07;letter-spacing:-.03em;
   margin-bottom:1.4rem;text-align:center;
   animation:fadeUp .6s .1s ease both
@@ -341,7 +341,7 @@ section{position:relative;padding:100px 6%;z-index:1}
 ═══════════════════════════════════ */
 .services-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  grid-template-columns:repeat(4,1fr);
   gap:1.4rem
 }
 /* tilt — JS applies perspective */
@@ -484,7 +484,7 @@ section{position:relative;padding:100px 6%;z-index:1}
 ═══════════════════════════════════ */
 .process-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  grid-template-columns:repeat(4,1fr);
   gap:1.4rem
 }
 .process-card{
@@ -644,7 +644,7 @@ section{position:relative;padding:100px 6%;z-index:1}
 }
 .wl-banner h2{
   font-family:var(--font-head);
-  font-size:clamp(1.7rem,3.2vw,2.4rem);
+  font-size:clamp(1.4rem,2.6vw,2rem);
   font-weight:800;line-height:1.15;letter-spacing:-.025em;
   margin-bottom:.9rem;text-align:left
 }
@@ -815,7 +815,7 @@ section{position:relative;padding:100px 6%;z-index:1}
   transform:translate(-50%,-50%);pointer-events:none
 }
 .cta-inner{position:relative;z-index:1}
-.cta-sec .section-title{font-size:clamp(2rem,4.5vw,3.5rem)}
+.cta-sec .section-title{font-size:clamp(1.7rem,3.2vw,2.8rem)}
 .cta-sec .section-sub{margin:0 auto 2.2rem}
 .cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 
@@ -837,7 +837,7 @@ section{position:relative;padding:100px 6%;z-index:1}
 .cs-dot-sep{color:var(--border)}
 .cs-client{font-size:.78rem;color:var(--muted);font-weight:500}
 .cs-title{
-  font-family:var(--font-head);font-size:clamp(1.8rem,3.5vw,2.8rem);
+  font-family:var(--font-head);font-size:clamp(1.5rem,2.8vw,2.2rem);
   font-weight:800;line-height:1.1;letter-spacing:-.02em;margin-bottom:1rem
 }
 .cs-desc{font-size:.95rem;color:var(--muted);line-height:1.75;max-width:680px}
@@ -1074,8 +1074,9 @@ footer{
   background:linear-gradient(135deg,var(--bg) 0%,rgba(255,77,0,.02) 100%);
   border-top:1px solid;
   border-image:linear-gradient(90deg,var(--border),rgba(255,77,0,.3),var(--border)) 1;
-  padding:5rem 6% 4rem;
-  position:relative;overflow:hidden
+  padding:4rem 6%;
+  position:relative;overflow:hidden;
+  display:flex;align-items:center
 }
 footer::before{
   content:'Mohi';position:absolute;
@@ -1087,8 +1088,7 @@ footer::before{
   pointer-events:none;z-index:0
 }
 .footer-inner{
-  display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;
-  gap:3rem;margin-bottom:3.5rem;position:relative;z-index:1
+  display:block;margin:0;position:relative;z-index:1
 }
 .footer-brand p{
   font-size:.84rem;color:var(--muted);
@@ -1106,9 +1106,10 @@ footer::before{
 }
 .footer-col ul a:hover{color:var(--accent)}
 .footer-bottom{
-  padding-top:2rem;border-top:1px solid var(--border);
+  padding:0;margin:0;border-top:none;
   display:flex;justify-content:space-between;align-items:center;
-  flex-wrap:wrap;gap:1rem;position:relative;z-index:1
+  flex-wrap:wrap;gap:1rem;position:relative;z-index:1;
+  width:100%
 }
 .footer-copy{font-size:.8rem;color:var(--muted)}
 .footer-copy a{
@@ -1159,39 +1160,6 @@ footer::before{
 .val-icon{font-size:1.6rem;margin-bottom:1rem}
 .val-card h4{font-family:var(--font-head);font-size:1rem;font-weight:700;margin-bottom:.4rem}
 .val-card p{font-size:.845rem;color:var(--muted);line-height:1.7}
-
-/* ═══════════════════════════════════
-   SERVICES PAGE EXTRAS
-═══════════════════════════════════ */
-.svc-full-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:1.4rem
-}
-.svc-full-card{
-  background:var(--bg2);border:1px solid var(--border);
-  border-radius:var(--radius);padding:2.2rem 2rem;
-  position:relative;overflow:hidden;
-  transition:transform .3s,border-color .3s
-}
-.svc-full-card::after{
-  content:'';position:absolute;bottom:0;left:0;right:0;
-  height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));
-  transform:scaleX(0);transition:transform .3s;transform-origin:left
-}
-.svc-full-card:hover{transform:translateY(-6px);border-color:rgba(255,77,0,.3)}
-.svc-full-card:hover::after{transform:scaleX(1)}
-.svc-full-icon{
-  width:52px;height:52px;border-radius:14px;
-  background:rgba(255,77,0,.12);border:1px solid rgba(255,77,0,.18);
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.5rem;margin-bottom:1.5rem
-}
-.svc-full-card h3{font-family:var(--font-head);font-size:1.12rem;font-weight:700;margin-bottom:.55rem}
-.svc-full-card p{font-size:.875rem;color:var(--muted);line-height:1.75}
-.svc-includes{list-style:none;margin-top:1.2rem;display:flex;flex-direction:column;gap:.45rem}
-.svc-includes li{font-size:.82rem;color:var(--muted);display:flex;gap:.5rem}
-.svc-includes li::before{content:'→';color:var(--accent);flex-shrink:0}
 
 /* ═══════════════════════════════════
    WORK PAGE EXTRAS
@@ -1251,7 +1219,7 @@ footer::before{
   display:grid;grid-template-columns:1fr 1fr;
   gap:4rem;align-items:center;margin-top:3rem
 }
-.case-wrap h3{font-family:var(--font-head);font-size:clamp(1.5rem,2.5vw,2rem);font-weight:800;line-height:1.2;margin-bottom:1rem}
+.case-wrap h3{font-family:var(--font-head);font-size:clamp(1.3rem,2.2vw,1.7rem);font-weight:800;line-height:1.2;margin-bottom:1rem}
 .case-wrap p{font-size:.93rem;color:var(--muted);line-height:1.8;margin-bottom:1.5rem}
 .case-stats{display:flex;gap:2rem;flex-wrap:wrap}
 .cs-n{font-family:var(--font-head);font-size:1.8rem;font-weight:800;color:var(--accent)}
@@ -1272,7 +1240,7 @@ footer::before{
 }
 .contact-info h2{
   font-family:var(--font-head);
-  font-size:clamp(1.8rem,3.2vw,2.5rem);
+  font-size:clamp(1.5rem,2.6vw,2rem);
   font-weight:800;line-height:1.15;
   letter-spacing:-.025em;margin-bottom:1rem
 }
@@ -1365,6 +1333,8 @@ footer::before{
 @media(max-width:900px){
   .nav-links{display:none}
   .hamburger{display:flex}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .process-grid{grid-template-columns:repeat(2,1fr)}
   .about-grid{grid-template-columns:1fr;gap:2.5rem}
   .wl-banner{grid-template-columns:1fr;gap:2rem;text-align:center}
   .wl-banner .btn-primary{align-self:center}
@@ -1385,6 +1355,8 @@ footer::before{
   nav{padding:0 16px;height:52px}
   section{padding:70px 5%}
   .hero{padding:calc(var(--nav-h)+44px) 5% 60px}
+  .services-grid{grid-template-columns:1fr}
+  .process-grid{grid-template-columns:1fr}
   .hero h1{font-size:2.3rem}
   .hero-btns{flex-direction:column;align-items:center}
   .hero-btns a,.hero-btns button,.hero-btns span{width:auto;justify-content:center}
@@ -1572,9 +1544,6 @@ footer::before{
   .wl-features{gap:.4rem}
   .wl-feat{font-size:.7rem;padding:4px 10px}
 
-  /* Services page full cards */
-  .svc-full-card{padding:1.6rem 1.4rem}
-
   /* Comparison section */
   .compare-wrap{gap:1rem}
   .compare-col{padding:1.4rem 1.2rem}
@@ -1638,7 +1607,7 @@ footer::before{
     <ul class="nav-links">
       <li><a onclick="go('home')" data-p="home">Home</a></li>
       <li><a onclick="go('about')" data-p="about">About</a></li>
-      <li><a onclick="go('services')" data-p="services">Services</a></li>
+      <li><a onclick="goServices()" data-p="services">Services</a></li>
       <li><a onclick="go('work')" data-p="work">Work</a></li>
       <li><a onclick="go('cases')" data-p="cases">Case Studies</a></li>
       <li><a onclick="goContact()" data-p="contact">Contact</a></li>
@@ -1656,7 +1625,7 @@ footer::before{
 <div class="mobile-drawer" id="drawer">
   <a onclick="go('home');closeMenu()" data-p="home">Home</a>
   <a onclick="go('about');closeMenu()" data-p="about">About</a>
-  <a onclick="go('services');closeMenu()" data-p="services">Services</a>
+  <a onclick="goServices();closeMenu()" data-p="services">Services</a>
   <a onclick="go('work');closeMenu()" data-p="work">Work</a>
   <a onclick="go('cases');closeMenu()" data-p="cases">Case Studies</a>
   <a onclick="goContact();closeMenu()" data-p="contact">Contact</a>
@@ -1741,7 +1710,7 @@ footer::before{
   <section id="services">
     <div class="sec-head center reveal">
       <span class="section-label">What I Do</span>
-      <h2 class="section-title">Services Built for Agencies</h2>
+      <h2 class="section-title">Services Built for<br/><span class="grad">Agencies</span></h2>
       <p class="section-sub">Everything your agency needs to deliver world-class Webflow sites — without hiring in-house.</p>
     </div>
     <div class="services-grid">
@@ -1770,9 +1739,7 @@ footer::before{
         <span class="card-tag">Retainer</span>
       </div>
     </div>
-    <div style="text-align:center;margin-top:3rem" class="reveal">
-      <span class="btn-outline" onclick="go('services')">View All Services →</span>
-    </div>
+    
   </section>
 
   <!-- PROCESS -->
@@ -1869,7 +1836,7 @@ footer::before{
   <section id="pricing">
     <div class="sec-head center reveal">
       <span class="section-label">Pricing Plans</span>
-      <h2 class="section-title">Flexible Plans For Every Stage</h2>
+      <h2 class="section-title">Flexible Plans For<br/><span class="grad">Every Stage</span></h2>
       <p class="section-sub">Structured packages designed for different project needs and scales.</p>
     </div>
     <div class="pricing-grid">
@@ -2170,7 +2137,7 @@ footer::before{
     <div class="glow" style="width:500px;height:500px;top:-80px;right:-100px;background:rgba(255,77,0,.1)"></div>
     <div class="reveal">
       <span class="section-label">About Me</span>
-      <h1 class="section-title" style="font-size:clamp(2.2rem,4.5vw,3.8rem)">The Developer Behind Your<br/><span class="grad">Agency Deliverables</span></h1>
+      <h1 class="section-title" style="font-size:clamp(1.8rem,3.5vw,3rem)">The Developer Behind Your<br/><span class="grad">Agency Deliverables</span></h1>
       <p class="section-sub">I'm Mohi — a Webflow developer who helps agencies scale delivery without scaling headcount.</p>
     </div>
   </section>
@@ -2191,7 +2158,7 @@ footer::before{
         </ul>
         <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap">
           <span class="btn-primary" onclick="goContact()">Work With Me →</span>
-          <span class="btn-outline" onclick="go('services')">My Services</span>
+          <span class="btn-outline" onclick="goServices()">My Services</span>
         </div>
       </div>
       <div class="about-visual reveal-r">
@@ -2237,82 +2204,78 @@ footer::before{
     </div>
   </section>
 
-  <section class="cta-sec">
+  <!-- CTA -->
+  <section class="cta-sec" id="cta-section">
     <div class="cta-inner reveal">
-      <span class="section-label">Let's Connect</span>
-      <h2 class="section-title">Ready to Work Together?</h2>
-      <p class="section-sub">Let's have a quick call and see if we're a good fit for your agency.</p>
-      <div class="cta-btns" style="margin-top:2rem">
-        <span class="btn-primary" onclick="goContact()" style="font-size:1rem;padding:15px 34px">Book a Free Call →</span>
+      <span class="section-label">Let's Work Together</span>
+      <h2 class="section-title">Ready to Scale Your<br/><span class="grad">Webflow Delivery?</span></h2>
+      <p class="section-sub">Book a free 20-minute call. No sales pitch — just a quick chat to see if we're a good fit.</p>
+    </div>
+
+    <!-- Custom Booking Dashboard -->
+    <div class="booking-wrap reveal">
+      <div class="booking-dashboard">
+
+        <!-- LEFT: Profile + event info -->
+        <div class="booking-left">
+          <div class="booking-avatar">M</div>
+          <div class="booking-name">Mohiuddin Ahmed</div>
+          <div class="booking-role">White-Label Webflow Developer</div>
+          <div class="booking-event-title">Free Discovery Call</div>
+          <div class="booking-meta">
+            <div class="bm-item"><span class="bm-icon">⏱</span>20 minutes</div>
+            <div class="bm-item"><span class="bm-icon">📹</span>Google Meet / Zoom</div>
+            <div class="bm-item"><span class="bm-icon">🌍</span>Any timezone</div>
+          </div>
+          <div class="booking-desc">Quick chat to understand your project needs and see if we're a good fit. No commitment required.</div>
+          <div class="booking-avail"><span class="avail-dot"></span>Accepting new projects</div>
+        </div>
+
+        <!-- DIVIDER -->
+        <div class="booking-divider"></div>
+
+        <!-- MIDDLE: Calendar -->
+        <div class="booking-middle" id="booking-cal">
+          <div class="cal-header">
+            <button class="cal-nav" id="cal-prev">&#8249;</button>
+            <div class="cal-month-year" id="cal-title"></div>
+            <button class="cal-nav" id="cal-next">&#8250;</button>
+          </div>
+          <div class="cal-days-header">
+            <span>SUN</span><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span>
+          </div>
+          <div class="cal-grid" id="cal-grid"></div>
+          <div class="cal-tz">
+            <span class="bm-icon">🕐</span>
+            <span id="cal-timezone">Loading timezone...</span>
+          </div>
+        </div>
+
+        <!-- RIGHT: Time slots (shown after date pick) -->
+        <div class="booking-right" id="booking-times" style="display:none">
+          <div class="times-date" id="times-date"></div>
+          <div class="times-label">Available times</div>
+          <div class="times-grid" id="times-grid"></div>
+          <button class="cal-nav" style="margin-top:1rem;font-size:.8rem;padding:6px 14px" onclick="document.getElementById('booking-times').style.display='none';document.getElementById('booking-cal').style.flex='1'">← Back</button>
+        </div>
+
+        <!-- CONFIRM MODAL overlay inside dashboard -->
+        <div class="booking-confirm" id="booking-confirm" style="display:none">
+          <div class="confirm-inner">
+            <div class="confirm-icon">✓</div>
+            <h3>Booking Confirmed!</h3>
+            <p id="confirm-details"></p>
+            <p style="font-size:.8rem;color:var(--muted);margin-top:.5rem">A calendar invite has been sent to your email.</p>
+            <button class="btn-primary" style="margin-top:1.2rem;font-size:.85rem" onclick="resetBooking()">Book Another Time</button>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 </div><!-- /about -->
 
-<!-- ═══════════════════════════════════════════════
-     SERVICES PAGE
-═══════════════════════════════════════════════ -->
-<div class="page" id="page-services">
-  <section style="padding:calc(var(--nav-h) + 72px) 6% 80px;position:relative;overflow:hidden">
-    <div class="glow" style="width:500px;height:500px;top:-80px;left:-100px;background:rgba(255,77,0,.1)"></div>
-    <div class="reveal">
-      <span class="section-label">Services</span>
-      <h1 class="section-title" style="font-size:clamp(2.2rem,4.5vw,3.8rem)">Everything Your Agency<br/><span class="grad">Needs to Deliver</span></h1>
-      <p class="section-sub">White-label Webflow development — built around how agencies actually work.</p>
-    </div>
-  </section>
 
-  <section style="padding-top:20px">
-    <div class="svc-full-grid">
-      <div class="svc-full-card reveal"><div class="svc-full-icon"><svg viewBox="0 0 28 28" fill="none"><defs><linearGradient id="sf1" x1="0" y1="0" x2="28" y2="28"><stop stop-color="#ff4d00"/><stop offset="1" stop-color="#ff6600"/></linearGradient></defs><rect x="3" y="3" width="10" height="10" rx="2" stroke="url(#sf1)" stroke-width="1.5"/><rect x="15" y="3" width="10" height="10" rx="2" stroke="url(#sf1)" stroke-width="1.5" opacity=".5"/><rect x="3" y="15" width="10" height="10" rx="2" stroke="url(#sf1)" stroke-width="1.5" opacity=".5"/><path d="M20 15v10M15 20h10" stroke="url(#sf1)" stroke-width="1.5" stroke-linecap="round"/></svg></div><h3>Figma → Webflow</h3><p>Pixel-perfect translation of Figma designs into production-ready Webflow sites.</p><ul class="svc-includes"><li>Pixel-perfect responsive build</li><li>CMS structure from day one</li><li>Interactions & micro-animations</li><li>Webflow Editor configured</li><li>Loom handoff walkthrough</li></ul></div>
-      <div class="svc-full-card reveal"><div class="svc-full-icon"><svg viewBox="0 0 28 28" fill="none"><defs><linearGradient id="sf2" x1="0" y1="0" x2="28" y2="28"><stop stop-color="#ff4d00"/><stop offset="1" stop-color="#ff6600"/></linearGradient></defs><path d="M16 3L7 16h8l-3 9 10-13h-8l2-9z" stroke="url(#sf2)" stroke-width="1.5" stroke-linejoin="round"/></svg></div><h3>Web Design + Development</h3><p>No design yet? I handle both — custom branded sites from your brief or reference board.</p><ul class="svc-includes"><li>Strategy-first design approach</li><li>Custom layout and visual identity</li><li>Conversion-focused structure</li><li>Full Webflow development + CMS</li><li>2 rounds of revisions included</li></ul></div>
-      <div class="svc-full-card reveal"><div class="svc-full-icon"><svg viewBox="0 0 28 28" fill="none"><defs><linearGradient id="sf3" x1="0" y1="0" x2="28" y2="28"><stop stop-color="#ff4d00"/><stop offset="1" stop-color="#ff6600"/></linearGradient></defs><path d="M24 10c-2-3.5-5.8-6-10.2-6C8 4 3.5 8.5 3.5 14" stroke="url(#sf3)" stroke-width="1.5" stroke-linecap="round"/><path d="M4 22c2 3.5 5.8 6 10.2 6C20 28 24.5 23.5 24.5 18" stroke="url(#sf3)" stroke-width="1.5" stroke-linecap="round" opacity=".6"/><path d="M20 7l4 3-4 3M8 25l-4-3 4-3" stroke="url(#sf3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>WordPress → Webflow Migration</h3><p>Clean migrations — content, SEO, and redirects all handled. No plugins, no bloat.</p><ul class="svc-includes"><li>Full content migration</li><li>SEO meta tags preserved</li><li>301 redirects configured</li><li>Speed & performance optimization</li><li>Post-launch support included</li></ul></div>
-      <div class="svc-full-card reveal"><div class="svc-full-icon"><svg viewBox="0 0 28 28" fill="none"><defs><linearGradient id="sf4" x1="0" y1="0" x2="28" y2="28"><stop stop-color="#ff4d00"/><stop offset="1" stop-color="#ff6600"/></linearGradient></defs><circle cx="14" cy="14" r="6" stroke="url(#sf4)" stroke-width="1.5"/><path d="M11.5 14l2 2 4-4" stroke="url(#sf4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 3v4M14 21v4M3 14h4M21 14h4" stroke="url(#sf4)" stroke-width="1.5" stroke-linecap="round" opacity=".4"/></svg></div><h3>Webflow Maintenance</h3><p>Your white-label dev on retainer — fixes, new sections, CMS updates on demand.</p><ul class="svc-includes"><li>Bug fixes & visual updates</li><li>New page or section additions</li><li>CMS updates & content changes</li><li>Performance monitoring</li><li>Priority turnaround for retainers</li></ul></div>
-      <div class="svc-full-card reveal"><div class="svc-full-icon"><svg viewBox="0 0 28 28" fill="none"><defs><linearGradient id="sf5" x1="0" y1="0" x2="28" y2="28"><stop stop-color="#ff4d00"/><stop offset="1" stop-color="#ff6600"/></linearGradient></defs><path d="M4 24V8l10-4 10 4v16" stroke="url(#sf5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 24v-8h8v8" stroke="url(#sf5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity=".7"/><path d="M4 14h20" stroke="url(#sf5)" stroke-width="1.5" stroke-linecap="round" opacity=".4"/></svg></div><h3>CMS Architecture</h3><p>Complex CMS builds — multi-reference collections, filtered lists, dynamic templates.</p><ul class="svc-includes"><li>Collection architecture planning</li><li>Multi-reference & nested CMS</li><li>Finsweet CMS Filter & Load</li><li>Dynamic page templates</li><li>Client editor documentation</li></ul></div>
-      <div class="svc-full-card reveal"><div class="svc-full-icon"><svg viewBox="0 0 28 28" fill="none"><defs><linearGradient id="sf6" x1="0" y1="0" x2="28" y2="28"><stop stop-color="#ff4d00"/><stop offset="1" stop-color="#ff6600"/></linearGradient></defs><path d="M14 3v22M3 14h22" stroke="url(#sf6)" stroke-width="1.5" stroke-linecap="round" opacity=".4"/><path d="M14 7l2 5h5l-4 3 1.5 5-4.5-3-4.5 3 1.5-5-4-3h5z" stroke="url(#sf6)" stroke-width="1.5" stroke-linejoin="round"/></svg></div><h3>Interactions & Animations</h3><p>Bring your Webflow sites to life — scroll triggers, GSAP timelines, Lottie animations.</p><ul class="svc-includes"><li>Webflow native interactions</li><li>GSAP scroll-based animations</li><li>Lottie integration</li><li>Page transitions</li><li>Micro-interaction design</li></ul></div>
-    </div>
-  </section>
-
-  <section class="sec-dark">
-    <div class="sec-head center reveal"><span class="section-label">Pricing Plans</span><h2 class="section-title">Flexible Plans For Every Stage</h2><p class="section-sub">Structured packages designed for different project needs and scales.</p></div>
-    <div class="pricing-grid">
-      <div class="pricing-card tilt-card reveal"><span class="price-label">Getting Started</span><h3 class="price-tier">Starter Plan</h3><p class="price-description">Perfect for small projects and landing pages.</p><div class="price-amount">$999</div><div class="price-period">one-time project</div><ul class="price-features"><li>Single-page or landing page</li><li>Responsive design</li><li>Basic CMS structure</li><li>2 rounds of revisions</li><li>5–7 day turnaround</li><li>Clean handoff docs</li></ul><span class="price-cta" onclick="goContact()">Get Started</span></div>
-      <div class="pricing-card featured tilt-card reveal"><span class="pricing-badge">POPULAR</span><span class="price-label">Scale Your Reach</span><h3 class="price-tier">Growth Plan</h3><p class="price-description">Multi-page site with advanced features and CMS.</p><div class="price-amount">$2,500</div><div class="price-period">one-time project</div><ul class="price-features"><li>5–10 page website</li><li>Advanced CMS setup</li><li>Dynamic content templates</li><li>Animations & interactions</li><li>SEO optimization</li><li>3 rounds of revisions</li><li>Performance optimization</li><li>Monthly strategy calls</li></ul><span class="price-cta" onclick="goContact()">Start Growing</span></div>
-      <div class="pricing-card tilt-card reveal"><span class="price-label">Long-term Success</span><h3 class="price-tier">Enterprise Plan</h3><p class="price-description">Custom solutions for complex projects.</p><div class="price-amount">$5,000+</div><div class="price-period">starting price</div><ul class="price-features"><li>10+ page website</li><li>Custom CMS architecture</li><li>Advanced integrations</li><li>Unlimited revisions</li><li>Priority support</li><li>Quarterly strategy reviews</li><li>Maintenance retainer</li><li>Dedicated partnership</li></ul><span class="price-cta" onclick="goContact()">Let's Talk</span></div>
-    </div>
-    <p style="text-align:center;color:var(--muted);font-size:.84rem;margin-top:2rem" class="reveal">All prices are starting points. Complex builds get a custom quote after a free scoping call.</p>
-
-    <!-- PRICING COMPARISON TABLE -->
-    <div class="price-compare reveal">
-      <div class="pc-head">
-        <span>What's Included</span>
-        <span>Starter</span>
-        <span class="pc-hl">Growth</span>
-        <span>Enterprise</span>
-      </div>
-      <div class="pc-row"><span>Responsive Webflow Build</span><span class="pc-yes">✓</span><span class="pc-yes pc-hl">✓</span><span class="pc-yes">✓</span></div>
-      <div class="pc-row"><span>CMS Setup</span><span>Basic</span><span class="pc-hl pc-accent">Advanced</span><span>Custom</span></div>
-      <div class="pc-row"><span>Animations &amp; Interactions</span><span class="pc-no">–</span><span class="pc-yes pc-hl">✓</span><span class="pc-yes">✓</span></div>
-      <div class="pc-row"><span>Revision Rounds</span><span>2</span><span class="pc-hl pc-accent">3</span><span>Unlimited</span></div>
-      <div class="pc-row"><span>Turnaround</span><span>5–7 days</span><span class="pc-hl pc-accent">7–10 days</span><span>Custom</span></div>
-      <div class="pc-row"><span>SEO Meta Setup</span><span class="pc-no">–</span><span class="pc-yes pc-hl">✓</span><span class="pc-yes">✓</span></div>
-      <div class="pc-row"><span>NDA Signed</span><span class="pc-yes">✓</span><span class="pc-yes pc-hl">✓</span><span class="pc-yes">✓</span></div>
-      <div class="pc-row"><span>Loom Handoff Video</span><span class="pc-yes">✓</span><span class="pc-yes pc-hl">✓</span><span class="pc-yes">✓</span></div>
-      <div class="pc-row"><span>Maintenance Retainer</span><span class="pc-no">–</span><span class="pc-no pc-hl">–</span><span class="pc-yes">✓</span></div>
-    </div>
-  </section>
-
-  <section class="cta-sec">
-    <div class="cta-inner reveal">
-      <span class="section-label">Let's Get Started</span>
-      <h2 class="section-title">Not Sure Which Service<br/>You Need?</h2>
-      <p class="section-sub">Book a free 20-minute call and I'll help you figure it out.</p>
-      <div class="cta-btns" style="margin-top:2rem">
-        <span class="btn-primary" onclick="goContact()" style="font-size:1rem;padding:15px 34px">Book a Free Call →</span>
-      </div>
-    </div>
-  </section>
-</div><!-- /services -->
 
 <!-- ═══════════════════════════════════════════════
      WORK PAGE
@@ -2322,7 +2285,7 @@ footer::before{
     <div class="glow" style="width:500px;height:500px;top:-80px;right:-50px;background:rgba(255,77,0,.1)"></div>
     <div class="reveal">
       <span class="section-label">Portfolio</span>
-      <h1 class="section-title" style="font-size:clamp(2.2rem,4.5vw,3.8rem)">Selected<br/><span class="grad">Projects</span></h1>
+      <h1 class="section-title" style="font-size:clamp(1.8rem,3.5vw,3rem)">Selected<br/><span class="grad">Projects</span></h1>
       <p class="section-sub">Webflow builds for agencies, startups, and brands. Real work, real results.</p>
     </div>
   </section>
@@ -2372,7 +2335,7 @@ footer::before{
       <h2 class="section-title">Let's Build Your<br/><span class="grad">Next Project</span></h2>
       <div class="cta-btns" style="margin-top:2rem">
         <span class="btn-primary" onclick="goContact()" style="font-size:1rem;padding:15px 34px">Start a Project →</span>
-        <span class="btn-outline" onclick="go('services')" style="font-size:1rem;padding:15px 28px">View Services</span>
+        <span class="btn-outline" onclick="goServices()" style="font-size:1rem;padding:15px 28px">View Services</span>
       </div>
     </div>
   </section>
@@ -2388,7 +2351,7 @@ footer::before{
     <div class="glow" style="width:500px;height:500px;top:-80px;right:-100px;background:rgba(255,77,0,.1)"></div>
     <div class="reveal">
       <span class="section-label">Case Studies</span>
-      <h1 class="section-title" style="font-size:clamp(2.2rem,4.5vw,3.8rem)">Real Projects.<br/><span class="grad">Real Results.</span></h1>
+      <h1 class="section-title" style="font-size:clamp(1.8rem,3.5vw,3rem)">Real Projects.<br/><span class="grad">Real Results.</span></h1>
       <p class="section-sub">A behind-the-scenes look at how I solve problems, hit deadlines, and deliver builds agencies are proud to present.</p>
     </div>
   </section>
@@ -2571,41 +2534,9 @@ footer::before{
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <span class="logo-text" style="font-size:1.6rem;cursor:pointer" onclick="go('home')">mohi.</span>
-      <p>White-label Webflow developer for agencies. Fast delivery, CMS-ready builds, NDA-friendly workflows.</p>
-    </div>
-    <div class="footer-col">
-      <h5>Pages</h5>
-      <ul>
-        <li><a onclick="go('home')">Home</a></li>
-        <li><a onclick="go('about')">About</a></li>
-        <li><a onclick="go('services')">Services</a></li>
-        <li><a onclick="go('work')">Portfolio</a></li>
-        <li><a onclick="go('cases')">Case Studies</a></li>
-        <li><a onclick="goContact()">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h5>Services</h5>
-      <ul>
-        <li><a onclick="go('services')">Figma → Webflow</a></li>
-        <li><a onclick="go('services')">Web Design + Build</a></li>
-        <li><a onclick="go('services')">WP → Webflow</a></li>
-        <li><a onclick="go('services')">Maintenance</a></li>
-        <li><a onclick="go('services')">CMS Architecture</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h5>Connect</h5>
-      <ul>
-        <li><a href="https://bd.linkedin.com/in/mohithedev" target="_blank">LinkedIn</a></li>
-        <li><a href="/cdn-cgi/l/email-protection#f9919c959596b9949691908d919c9d9c8fd79a9694">Email</a></li>
-        <li><a href="https://twitter.com" target="_blank">Twitter / X</a></li>
-        <li><a onclick="goCTA()">Book a Call</a></li>
-      </ul>
     </div>
   </div>
-  <div class="footer-bottom">
+  <div class="footer-bottom" style="border-top:none;padding-top:0">
     <div class="footer-copy">Copyright © 2025 <a onclick="go('about')">Mohiuddin Ahmed</a> — White-Label Webflow Developer.</div>
     <div class="social-links">
       <a href="https://bd.linkedin.com/in/mohithedev" target="_blank" class="social-link" title="LinkedIn">in</a>
@@ -2629,6 +2560,14 @@ function goCTA(){
   go('home');
   setTimeout(()=>{
     const el=document.getElementById('cta-section');
+    if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+  },80);
+}
+
+function goServices(){
+  go('home');
+  setTimeout(()=>{
+    const el=document.getElementById('services');
     if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
   },80);
 }
