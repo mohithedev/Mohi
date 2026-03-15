@@ -930,6 +930,143 @@ section{position:relative;padding:100px 6%;z-index:1}
   .home-contact-wrap{grid-template-columns:1fr;gap:2.5rem;padding:60px 6%}
 }
 
+.calendly-wrap{
+  max-width:900px;margin:2.5rem auto 0;
+  border:1px solid rgba(255,77,0,.2);
+  border-radius:18px;overflow:hidden;
+}
+.calendly-wrap{display:none} /* remove old */
+/* ═══════════════════════════════════
+   BOOKING DASHBOARD
+═══════════════════════════════════ */
+.booking-wrap{
+  max-width:980px;margin:3rem auto 0;
+  border:1px solid rgba(255,77,0,.2);
+  border-radius:18px;overflow:hidden;
+  background:var(--bg2);
+}
+.booking-dashboard{
+  display:flex;min-height:480px;position:relative;
+}
+.booking-left{
+  width:240px;flex-shrink:0;
+  padding:2rem 1.6rem;
+  border-right:1px solid var(--border);
+  display:flex;flex-direction:column;gap:.6rem;
+}
+.booking-avatar{
+  width:56px;height:56px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-head);font-size:1.4rem;font-weight:800;
+  color:#fff;margin-bottom:.4rem;
+}
+.booking-name{font-family:var(--font-head);font-size:1rem;font-weight:700}
+.booking-role{font-size:.72rem;color:var(--muted);margin-bottom:.6rem}
+.booking-event-title{
+  font-family:var(--font-head);font-size:1.1rem;font-weight:700;
+  color:var(--accent);border-top:1px solid var(--border);
+  padding-top:.9rem;margin-top:.2rem;
+}
+.booking-meta{display:flex;flex-direction:column;gap:.45rem;margin:.2rem 0}
+.bm-item{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:var(--muted)}
+.bm-icon{font-size:.85rem;flex-shrink:0}
+.booking-desc{font-size:.78rem;color:var(--muted);line-height:1.65;margin-top:.4rem}
+.booking-avail{
+  display:flex;align-items:center;gap:6px;
+  font-size:.72rem;color:var(--accent2);font-weight:500;
+  margin-top:auto;padding-top:.8rem;
+}
+.booking-divider{width:1px;background:var(--border);flex-shrink:0}
+.booking-middle{
+  flex:1;padding:1.8rem 1.6rem;
+  display:flex;flex-direction:column;gap:1rem;
+}
+/* Calendar */
+.cal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.4rem}
+.cal-month-year{font-family:var(--font-head);font-size:1rem;font-weight:700}
+.cal-nav{
+  background:none;border:1px solid var(--border);
+  border-radius:8px;padding:4px 10px;
+  color:var(--text);cursor:pointer;font-size:1.1rem;
+  transition:border-color .2s,color .2s;
+}
+.cal-nav:hover{border-color:var(--accent);color:var(--accent)}
+.cal-days-header{
+  display:grid;grid-template-columns:repeat(7,1fr);
+  gap:2px;margin-bottom:4px;
+}
+.cal-days-header span{
+  font-size:.62rem;font-weight:700;letter-spacing:.06em;
+  color:var(--muted);text-align:center;padding:4px 0;
+}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
+.cal-day{
+  aspect-ratio:1;display:flex;align-items:center;justify-content:center;
+  font-size:.82rem;border-radius:8px;cursor:pointer;
+  transition:background .15s,color .15s;color:var(--muted);
+}
+.cal-day.available{
+  color:var(--text);font-weight:500;
+  background:rgba(255,255,255,.04);
+}
+.cal-day.available:hover{background:rgba(255,77,0,.15);color:var(--accent)}
+.cal-day.selected{background:var(--accent) !important;color:#fff !important;font-weight:700}
+.cal-day.today{border:1px solid rgba(255,77,0,.4);color:var(--accent)}
+.cal-day.empty{cursor:default}
+.cal-day.past{opacity:.3;cursor:default;pointer-events:none}
+.cal-tz{
+  display:flex;align-items:center;gap:.4rem;
+  font-size:.72rem;color:var(--muted);margin-top:auto;padding-top:.5rem;
+  border-top:1px solid var(--border);
+}
+/* Times panel */
+.booking-right{
+  width:180px;flex-shrink:0;
+  padding:1.8rem 1.2rem;
+  border-left:1px solid var(--border);
+  display:flex;flex-direction:column;gap:.6rem;
+  overflow-y:auto;
+}
+.times-date{
+  font-family:var(--font-head);font-size:.9rem;font-weight:700;
+  margin-bottom:.2rem;color:var(--accent)
+}
+.times-label{font-size:.72rem;color:var(--muted);margin-bottom:.4rem;letter-spacing:.04em;text-transform:uppercase}
+.times-grid{display:flex;flex-direction:column;gap:.45rem}
+.time-slot{
+  padding:8px 12px;border-radius:8px;
+  border:1px solid var(--border);
+  font-size:.82rem;font-weight:500;text-align:center;cursor:pointer;
+  transition:all .2s;color:var(--text);
+  background:rgba(255,255,255,.03);
+}
+.time-slot:hover{border-color:var(--accent);color:var(--accent);background:rgba(255,77,0,.08)}
+.time-slot.selected{background:var(--accent);border-color:var(--accent);color:#fff}
+/* Confirm */
+.booking-confirm{
+  position:absolute;inset:0;
+  background:rgba(9,9,9,.92);backdrop-filter:blur(8px);
+  border-radius:18px;
+  display:flex;align-items:center;justify-content:center;
+}
+.confirm-inner{text-align:center;padding:2rem}
+.confirm-icon{
+  width:56px;height:56px;border-radius:50%;
+  background:rgba(105,219,124,.15);border:2px solid rgba(105,219,124,.4);
+  color:#69db7c;font-size:1.5rem;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 1rem;
+}
+.confirm-inner h3{font-family:var(--font-head);font-size:1.3rem;margin-bottom:.5rem}
+.confirm-inner p{font-size:.85rem;color:var(--muted)}
+@media(max-width:768px){
+  .booking-dashboard{flex-direction:column}
+  .booking-left{width:100%;border-right:none;border-bottom:1px solid var(--border)}
+  .booking-divider{display:none}
+  .booking-right{width:100%;border-left:none;border-top:1px solid var(--border)}
+}
+
 /* ═══════════════════════════════════
    FOOTER  (your watermark design)
 ═══════════════════════════════════ */
@@ -1759,8 +1896,66 @@ footer::before{
       <span class="section-label">Let's Work Together</span>
       <h2 class="section-title">Ready to Scale Your<br/><span class="grad">Webflow Delivery?</span></h2>
       <p class="section-sub">Book a free 20-minute call. No sales pitch — just a quick chat to see if we're a good fit.</p>
-      <div class="cta-btns">
-        <span class="btn-primary" onclick="goContact()" style="font-size:1rem;padding:15px 34px">Book a Free Call →</span>
+    </div>
+
+    <!-- Custom Booking Dashboard -->
+    <div class="booking-wrap reveal">
+      <div class="booking-dashboard">
+
+        <!-- LEFT: Profile + event info -->
+        <div class="booking-left">
+          <div class="booking-avatar">M</div>
+          <div class="booking-name">Mohiuddin Ahmed</div>
+          <div class="booking-role">White-Label Webflow Developer</div>
+          <div class="booking-event-title">Free Discovery Call</div>
+          <div class="booking-meta">
+            <div class="bm-item"><span class="bm-icon">⏱</span>20 minutes</div>
+            <div class="bm-item"><span class="bm-icon">📹</span>Google Meet / Zoom</div>
+            <div class="bm-item"><span class="bm-icon">🌍</span>Any timezone</div>
+          </div>
+          <div class="booking-desc">Quick chat to understand your project needs and see if we're a good fit. No commitment required.</div>
+          <div class="booking-avail"><span class="avail-dot"></span>Accepting new projects</div>
+        </div>
+
+        <!-- DIVIDER -->
+        <div class="booking-divider"></div>
+
+        <!-- MIDDLE: Calendar -->
+        <div class="booking-middle" id="booking-cal">
+          <div class="cal-header">
+            <button class="cal-nav" id="cal-prev">&#8249;</button>
+            <div class="cal-month-year" id="cal-title"></div>
+            <button class="cal-nav" id="cal-next">&#8250;</button>
+          </div>
+          <div class="cal-days-header">
+            <span>SUN</span><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span>
+          </div>
+          <div class="cal-grid" id="cal-grid"></div>
+          <div class="cal-tz">
+            <span class="bm-icon">🕐</span>
+            <span id="cal-timezone">Loading timezone...</span>
+          </div>
+        </div>
+
+        <!-- RIGHT: Time slots (shown after date pick) -->
+        <div class="booking-right" id="booking-times" style="display:none">
+          <div class="times-date" id="times-date"></div>
+          <div class="times-label">Available times</div>
+          <div class="times-grid" id="times-grid"></div>
+          <button class="cal-nav" style="margin-top:1rem;font-size:.8rem;padding:6px 14px" onclick="document.getElementById('booking-times').style.display='none';document.getElementById('booking-cal').style.flex='1'">← Back</button>
+        </div>
+
+        <!-- CONFIRM MODAL overlay inside dashboard -->
+        <div class="booking-confirm" id="booking-confirm" style="display:none">
+          <div class="confirm-inner">
+            <div class="confirm-icon">✓</div>
+            <h3>Booking Confirmed!</h3>
+            <p id="confirm-details"></p>
+            <p style="font-size:.8rem;color:var(--muted);margin-top:.5rem">A calendar invite has been sent to your email.</p>
+            <button class="btn-primary" style="margin-top:1.2rem;font-size:.85rem" onclick="resetBooking()">Book Another Time</button>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -2497,7 +2692,107 @@ const cntObs=new IntersectionObserver((entries)=>{
 },{threshold:.4});
 document.querySelectorAll('.stat-num,.cs-stat-num').forEach(el=>cntObs.observe(el));
 
-/* ── FAQ ACCORDION ── */
+/* ── BOOKING DASHBOARD ── */
+(function(){
+  const AVAILABLE_DAYS=[1,2,3,4,5]; // Mon-Fri
+  const SLOTS=['09:00 AM','09:30 AM','10:00 AM','10:30 AM','11:00 AM','02:00 PM','02:30 PM','03:00 PM','03:30 PM','04:00 PM'];
+  const BOOKED={'15':'09:00 AM','18':'10:30 AM'}; // simulate some taken slots
+  let cur=new Date(), selDate=null, selTime=null;
+  cur.setDate(1);
+
+  function renderCal(){
+    const title=document.getElementById('cal-title');
+    const grid=document.getElementById('cal-grid');
+    if(!title||!grid)return;
+    const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+    title.textContent=months[cur.getMonth()]+' '+cur.getFullYear();
+    grid.innerHTML='';
+    const today=new Date(); today.setHours(0,0,0,0);
+    const first=new Date(cur.getFullYear(),cur.getMonth(),1);
+    const last=new Date(cur.getFullYear(),cur.getMonth()+1,0);
+    for(let i=0;i<first.getDay();i++){
+      const e=document.createElement('div');
+      e.className='cal-day empty';
+      grid.appendChild(e);
+    }
+    for(let d=1;d<=last.getDate();d++){
+      const date=new Date(cur.getFullYear(),cur.getMonth(),d);
+      const e=document.createElement('div');
+      const dow=date.getDay();
+      const isPast=date<today;
+      const isAvail=AVAILABLE_DAYS.includes(dow)&&!isPast;
+      const isToday=date.toDateString()===today.toDateString();
+      const isSel=selDate&&date.toDateString()===selDate.toDateString();
+      e.className='cal-day'+(isAvail?' available':'')+(isPast?' past':'')+(isToday?' today':'')+(isSel?' selected':'');
+      e.textContent=d;
+      if(isAvail){
+        e.onclick=()=>selectDate(date);
+      }
+      grid.appendChild(e);
+    }
+  }
+
+  function selectDate(date){
+    selDate=date;selTime=null;
+    renderCal();
+    const timesPanel=document.getElementById('booking-times');
+    const calPanel=document.getElementById('booking-cal');
+    timesPanel.style.display='flex';
+    timesPanel.style.flexDirection='column';
+    calPanel.style.flex='0 0 auto';
+    const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    document.getElementById('times-date').textContent=days[date.getDay()]+', '+months[date.getMonth()]+' '+date.getDate();
+    const grid=document.getElementById('times-grid');
+    grid.innerHTML='';
+    SLOTS.forEach(slot=>{
+      const btn=document.createElement('div');
+      btn.className='time-slot';
+      btn.textContent=slot;
+      btn.onclick=()=>confirmBooking(slot,btn);
+      grid.appendChild(btn);
+    });
+  }
+
+  function confirmBooking(time,btn){
+    document.querySelectorAll('.time-slot').forEach(b=>b.classList.remove('selected'));
+    btn.classList.add('selected');
+    selTime=time;
+    setTimeout(()=>{
+      const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+      const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+      document.getElementById('confirm-details').textContent=
+        days[selDate.getDay()]+', '+months[selDate.getMonth()]+' '+selDate.getDate()+' at '+time+' • 20 min';
+      document.getElementById('booking-confirm').style.display='flex';
+    },300);
+  }
+
+  window.resetBooking=function(){
+    selDate=null;selTime=null;
+    document.getElementById('booking-confirm').style.display='none';
+    document.getElementById('booking-times').style.display='none';
+    document.getElementById('booking-cal').style.flex='1';
+    renderCal();
+  };
+
+  document.getElementById('cal-prev')&&document.getElementById('cal-prev').addEventListener('click',()=>{
+    cur.setMonth(cur.getMonth()-1);renderCal();
+  });
+  document.getElementById('cal-next')&&document.getElementById('cal-next').addEventListener('click',()=>{
+    cur.setMonth(cur.getMonth()+1);renderCal();
+  });
+
+  // Timezone
+  try{
+    const tz=Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const el=document.getElementById('cal-timezone');
+    if(el)el.textContent=tz;
+  }catch(e){}
+
+  renderCal();
+})();
+
+
 document.addEventListener('click',function(e){
   const q=e.target.closest('.faq-q');
   if(!q)return;
@@ -2516,5 +2811,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   },2500);
 });
 </script>
+<!-- Calendly widget script -->
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>
